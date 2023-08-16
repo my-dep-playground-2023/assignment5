@@ -21,6 +21,7 @@ public class Assignment5 {
 
     String screen=DASHBOARD;
     String [] customers=new String[0];
+    double [] deposits=new double[0];
 
     do{
         final String APP_TITLE = String.format("%s%s%s",
@@ -61,10 +62,16 @@ System.out.println("\t" + APP_TITLE + "\n");
 
             boolean valid;
             String name;
+            double deposit;
             do{
                 valid = true;
                 System.out.print("\tEnter  Name: ");
                 name = Scanner.nextLine().strip();
+
+                System.out.println("Enter Inial deposit");
+                deposit=Scanner.nextDouble();
+                Scanner.nextLine();
+
                 if (name.isBlank()){
                     System.out.printf("\t%sName can't be empty%s\n", COLOR_RED_BOLD, RESET);
                     valid = false;
