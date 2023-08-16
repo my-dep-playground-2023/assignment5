@@ -21,7 +21,7 @@ public class Assignment5 {
 
     String screen=DASHBOARD;
     String [] customers=new String[0];
-    double [] deposits=new double[0];
+    Double[] deposits=new Double[0];
 
     do{
         final String APP_TITLE = String.format("%s%s%s",
@@ -68,7 +68,7 @@ System.out.println("\t" + APP_TITLE + "\n");
                 System.out.print("\tEnter  Name: ");
                 name = Scanner.nextLine().strip();
 
-                System.out.println("Enter Inial deposit");
+                System.out.println("\tEnter Inial deposit");
                 deposit=Scanner.nextDouble();
                 Scanner.nextLine();
 
@@ -94,6 +94,14 @@ System.out.println("\t" + APP_TITLE + "\n");
             newcustomers[newcustomers.length -1] = name;
             customers = newcustomers;
 
+
+            Double[] newdeposits = new Double[deposits.length + 1];
+            for (int i = 0; i < deposits.length; i++) {
+                newdeposits [i] = deposits[i];}
+            
+            newdeposits[newdeposits.length -1] = deposit;
+            deposits =newdeposits;
+
             System.out.println();
             System.out.print("\t" + name + " added sucessfully.\n\tDo you want to add new Account (Y/n)? ");
             if (Scanner.nextLine().strip().toUpperCase().equals("Y")) continue;
@@ -105,5 +113,5 @@ System.out.println("\t" + APP_TITLE + "\n");
 
       }while(true);
 
-   }
-   }
+   
+   }}
